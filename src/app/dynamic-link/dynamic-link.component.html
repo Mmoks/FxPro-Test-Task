@@ -1,0 +1,1 @@
+<a [routerLink]="[getMinutes(time)]" *ngIf="timeService.time$ | async as time"> Link - {{ time | date: 'mm'}} </a>
