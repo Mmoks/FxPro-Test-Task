@@ -1,10 +1,10 @@
 import { Injectable } from "@angular/core";
-import { Subject, interval, Observable } from "rxjs";
+import { Subject, interval, Observable, BehaviorSubject } from "rxjs";
 import { map, tap, distinctUntilChanged } from "rxjs/operators";
 
 @Injectable()
 export class TimeService {
-  private time: Subject<Date> = new Subject<Date>();
+  private time: BehaviorSubject<Date> = new BehaviorSubject<Date>(new Date());
   time$: Observable<Date> = this.time.asObservable();
 
   constructor() {
